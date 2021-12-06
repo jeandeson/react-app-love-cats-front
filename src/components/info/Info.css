@@ -1,0 +1,10 @@
+.info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+}
+.info h1{
+  color: var(--purple);
+  font-size: 26px;
+}

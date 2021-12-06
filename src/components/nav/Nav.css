@@ -1,0 +1,22 @@
+.nav-list{
+  display: flex;
+  list-style: none;
+  padding: 10px 0px;
+  justify-content: space-evenly;
+  background-color: var(--lilac);
+}
+
+.nav-list li{
+  margin: 0 10px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  color: var(--white);
+}
+
+.nav-list li.active{
+  background-color: var(--dark-lilac);
+}
+
+.display-none{
+  display: none;
+}

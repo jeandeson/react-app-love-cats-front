@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-const baseURL = "localhost:3000/api";
+const baseURL = "http://localhost:3000/api/";
 const headers = { "Content-Type": "application/json" };
 const timeout = 0;
 

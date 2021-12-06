@@ -1,0 +1,7 @@
+.loading-modal div{
+  display: flex;
+  justify-content: center;
+}
+.loading-modal{
+  background: rgba(0,0,0,0.3);
+}

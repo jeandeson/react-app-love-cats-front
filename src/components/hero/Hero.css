@@ -1,0 +1,16 @@
+.hero-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45vh;
+  background-image: url(../../assets/images/cat1.png);
+  background-size: cover;
+  background-attachment: local;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.hero-container h1{
+  color: var(--white);
+  font-size: 72px;
+  font-weight: 500;
+}
