@@ -1,3 +1,4 @@
+
 .nav-list{
   display: flex;
   list-style: none;
@@ -6,14 +7,15 @@
   background-color: var(--lilac);
 }
 
-.nav-list li{
+.nav-list  .nav-link{
   margin: 0 10px;
   padding: 10px 18px;
   border-radius: 50px;
   color: var(--white);
+  text-decoration: none;
 }
 
-.nav-list li.active{
+.nav-list .nav-link.active{
   background-color: var(--dark-lilac);
 }
 

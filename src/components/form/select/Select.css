@@ -1,0 +1,19 @@
+.form-select-box{
+  height: 40px;
+  font-size: 16px;
+  width: 100%;
+  border-right: none;
+  color: var(--black);
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple);
+  color: white;
+}
+
+.form-select-box option {
+  background-color: var(--dark-lilac);
+  position: absolute;
+}

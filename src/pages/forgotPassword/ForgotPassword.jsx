@@ -10,7 +10,6 @@ import Input from "../../components/form/input/Input";
 import Button from "../../components/form/button/Button";
 import Footer from "../../components/form/footer/Footer";
 import { hideEffect } from "../../generics/useHideEffect";
-import "./ForgotPassword.css";
 
 const Form = () => {
   const authService = new AuthService();

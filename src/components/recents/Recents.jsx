@@ -1,161 +1,59 @@
 import React from "react";
 import "./Recents.css";
+import { useState } from "react";
 import { HiOutlineHeart } from "react-icons/hi";
-import img1 from "../../assets/images/cat2.png";
-import img2 from "../../assets/images/cat3.png";
-import img3 from "../../assets/images/cat4.png";
-import img4 from "../../assets/images/cat5.png";
-import img5 from "../../assets/images/cat6.png";
+import { useSelector } from "react-redux";
+import Button from "../../components/form/button/Button";
 
 const Recents = () => {
+  const [loadAll, setLoadAll] = useState(false);
+  const cats = useSelector((state) => state.cat);
+  const filtredCats = cats.filter((cat, index) => index < 5);
+
+  const setLoad = () => {
+    setLoadAll(true);
+  };
   return (
-    <ul className="cats-recents">
-      <li>
-        <div
-          style={{
-            backgroundImage: `url(${img1})`,
-          }}
-          className="recents-info"
-        ></div>
-        <div>
-          <span className="cat-name">Jorge</span>
-        </div>
-        <div>
-          <span className="cat-info">Brand: </span>
-          <span className="cat-info">Bower</span>
-        </div>
-        <div>
-          <span className="cat-info">Color: </span>
-          <span className="cat-info">Gray</span>
-        </div>
-        <div>
-          <span className="cat-info">Gender: </span>
-          <span className="cat-info">Female</span>
-        </div>
-        <HiOutlineHeart />
-      </li>
-      <li>
-        <div
-          style={{
-            backgroundImage: `url(${img2})`,
-          }}
-          className="recents-info"
-        ></div>
-        <div>
-          <span className="cat-name">Jorge</span>
-        </div>
-        <div>
-          <span className="cat-info">Brand: </span>
-          <span className="cat-info">Bower</span>
-        </div>
-        <div>
-          <span className="cat-info">Color: </span>
-          <span className="cat-info">Gray</span>
-        </div>
-        <div>
-          <span className="cat-info">Gender: </span>
-          <span className="cat-info">Female</span>
-        </div>
-        <HiOutlineHeart />
-      </li>
-      <li>
-        <div
-          style={{
-            backgroundImage: `url(${img3})`,
-          }}
-          className="recents-info"
-        ></div>
-        <div>
-          <span className="cat-name">Jorge</span>
-        </div>
-        <div>
-          <span className="cat-info">Brand: </span>
-          <span className="cat-info">Bower</span>
-        </div>
-        <div>
-          <span className="cat-info">Color: </span>
-          <span className="cat-info">Gray</span>
-        </div>
-        <div>
-          <span className="cat-info">Gender: </span>
-          <span className="cat-info">Female</span>
-        </div>
-        <HiOutlineHeart />
-      </li>
-      <li>
-        <div
-          style={{
-            backgroundImage: `url(${img4})`,
-          }}
-          className="recents-info"
-        ></div>
-        <div>
-          <span className="cat-name">Jorge</span>
-        </div>
-        <div>
-          <span className="cat-info">Brand: </span>
-          <span className="cat-info">Bower</span>
-        </div>
-        <div>
-          <span className="cat-info">Color: </span>
-          <span className="cat-info">Gray</span>
-        </div>
-        <div>
-          <span className="cat-info">Gender: </span>
-          <span className="cat-info">Female</span>
-        </div>
-        <HiOutlineHeart />
-      </li>
-      <li>
-        <div
-          style={{
-            backgroundImage: `url(${img5})`,
-          }}
-          className="recents-info"
-        ></div>
-        <div>
-          <span className="cat-name">Jorge</span>
-        </div>
-        <div>
-          <span className="cat-info">Brand: </span>
-          <span className="cat-info">Bower</span>
-        </div>
-        <div>
-          <span className="cat-info">Color: </span>
-          <span className="cat-info">Gray</span>
-        </div>
-        <div>
-          <span className="cat-info">Gender: </span>
-          <span className="cat-info">Female</span>
-        </div>
-        <HiOutlineHeart />
-      </li>
-      <li>
-        <div
-          style={{
-            backgroundImage: `url(${img1})`,
-          }}
-          className="recents-info"
-        ></div>
-        <div>
-          <span className="cat-name">Jorge</span>
-        </div>
-        <div>
-          <span className="cat-info">Brand: </span>
-          <span className="cat-info">Bower</span>
-        </div>
-        <div>
-          <span className="cat-info">Color: </span>
-          <span className="cat-info">Gray</span>
-        </div>
-        <div>
-          <span className="cat-info">Gender: </span>
-          <span className="cat-info">Female</span>
-        </div>
-        <HiOutlineHeart />
-      </li>
-    </ul>
+    <>
+      {loadAll === false ? (
+        <>
+          <ul className="cats-recents">{cats && filtredCats.map((cat) => <RecentsCard key={cat.id} cat={cat} />)}</ul>
+          <Button type={"text"} onClick={setLoad} text={"Load All"} />
+        </>
+      ) : (
+        <ul className="cats-recents">{cats && cats.map((cat) => <RecentsCard key={cat.id} cat={cat} />)}</ul>
+      )}
+    </>
   );
 };
+
+function RecentsCard({ cat }) {
+  return (
+    <li>
+      <div
+        style={{
+          backgroundImage: `url(${cat.cat_image})`,
+        }}
+        className="recents-info"
+      ></div>
+      <div>
+        <span className="cat-name">{cat.cat_name}</span>
+      </div>
+      {/* <div>
+   <span className="cat-info">Brand: </span>
+   <span className="cat-info">Bower</span>
+ </div> */}
+      <div>
+        <span className="cat-info">Color:</span>
+        <span className="cat-info">{cat.color}</span>
+      </div>
+      <div>
+        <span className="cat-info">Gender: </span>
+        <span className="cat-info">{cat.genere}</span>
+      </div>
+      <HiOutlineHeart />
+    </li>
+  );
+}
 
 export default Recents;

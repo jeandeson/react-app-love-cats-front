@@ -1,0 +1,61 @@
+@keyframes showing-notifiy {
+  0% {
+    right: 0%;
+    opacity: 1;
+  }
+  75% {
+    right: 5%;
+    opacity: 1;
+  }
+  100% {
+    right: 5%;
+    opacity: 0;
+  }
+}
+
+.notification-close-wrapper{
+  background-color: red;
+  align-self: flex-start;
+  position: relative;
+}
+
+.notification-close{
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  padding: 10px;
+}
+.notification-close svg{
+  font-size: 1.5em;
+}
+
+.notification-container{
+  top: 5%;
+  display: none;
+  position: absolute;
+  right: 5%;
+  color: white;
+  display: flex;
+  height: 10%;
+  justify-content: center;
+  align-items: center;
+  animation: showing-notifiy 4s ease-in-out forwards;
+}
+
+.notification{
+  opacity: 0.7;
+}
+.notification-container p{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.notification-danger{
+  background-color: red;
+}
+.notification-sucess{
+  background-color: green;
+}
+.notification-info{
+  background-color: blue;
+}

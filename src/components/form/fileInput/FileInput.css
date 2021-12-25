@@ -1,0 +1,36 @@
+.file-input{
+  display: none;
+}
+input#file-upload-button{
+  display: none;
+}
+
+.input-file-container{
+  position: relative;
+}
+
+.input-file-container svg:last-child{
+  position: absolute;
+  right: -40px;
+  color: green;
+  font-size: 30px;
+}
+
+.file-upload-input{
+  display: none;
+}
+
+.label-input-file{
+  height: 40px;
+  font-size: 16px;
+  width: 100%;
+  border-right: none;
+  color: var(--black);
+  background: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple);
+  color: white;
+}

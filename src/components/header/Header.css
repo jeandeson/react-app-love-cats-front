@@ -1,20 +1,22 @@
 .header{
   display: flex;
   height: 40px;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   padding: 0 30px;
+  background-color: var(--white);
 }
 
 .header h2{
   font-weight: 800;
-  
   color: var(--dark-lilac);
 }
+
 .header svg{
   font-size: 25px;
   color: var(--dark-lilac);
 }
+
 .header svg.logo{
   font-size: 40px;
   margin-right: 5px;
@@ -28,7 +30,6 @@ ul.header-pages{
   list-style: none;
   height: 100%;
 }
-
 
 ul.header-pages li{
   display: flex;

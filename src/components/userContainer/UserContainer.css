@@ -1,0 +1,47 @@
+.user-container{
+  padding: 20px;
+  max-width: 50vw;
+  min-width: 50vw;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: var(--white);
+  margin: 15px 0px;
+}
+
+.user-header{
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.user-header div.unfollowed{
+  background-color: red !important;
+}
+
+.user-info{
+  margin-right: 10px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  flex: 1;
+}
+
+.user-info-img{
+  margin-right: 10px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.user-info-img img{
+  min-width: 100%;
+  min-height: 100%;
+}
+
+

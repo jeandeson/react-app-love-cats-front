@@ -14,14 +14,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body{
+  background-color: var(--wash);
+}
+
 :root {
   --purple: #6E0F7D;
   --gray: #ccc9ce;
+  --light-gray: #65676b;
   --lilac: #6504B5;
   --dark-lilac: #410078;
   --black: #000000;
   --light-black: #4d4751;
   --white: #fff;
+  --wash: #f0f2f5;
+  --blue: #2374e1;
+  --green: #45bd62;
 }
 
 .dark{

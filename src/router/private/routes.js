@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import AuthService from "../../services/authService";
-
-const authService = new AuthService();
+import { useSelector } from "react-redux";
 
 export function PrivateRoute({ element: Element }) {
   const [isValidUser, setIsvalidUser] = useState(true);
+  const userInfo = useSelector((state) => state.auth);
 
   useEffect(() => {
     const handleSetValidUser = () => {
-      const valid = authService.handleValidateUser();
-      if (valid != null) {
+      if (userInfo.token != null || userInfo.token !== undefined) {
         setIsvalidUser(true);
       } else {
         setIsvalidUser(false);
       }
     };
     handleSetValidUser();
-  }, [isValidUser]);
+  });
   return isValidUser === true ? <Element /> : <Navigate to="/login" />;
 }

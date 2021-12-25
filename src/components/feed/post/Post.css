@@ -1,0 +1,89 @@
+.post-container{
+  padding: 20px;
+  max-width: 50vw;
+  min-width: 50vw;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: var(--white);
+  margin-bottom: 15px;
+}
+
+.post-header{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+  min-width: 50px;
+  min-height: 50px;
+}
+
+.post-header-info{
+  flex: 1;
+}
+
+.post-img{
+  margin-right: 10px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.post-img img{
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.post-content{
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.post-interactions{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.post-action{
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+}
+
+.post-action span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  margin: 4px 0px;
+  border-radius: 5px;
+}
+
+.post-action span.liked{
+  background-color: var(--lilac);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.post-action span:hover{
+  background-color: var(--lilac);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.post-container span svg{
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.post-detail{
+  color: var(--light-gray);
+  font-weight: 100;
+  font-size: 14px;
+}

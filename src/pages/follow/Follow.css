@@ -1,0 +1,39 @@
+@keyframes rotation {
+  from{
+    transform: rotate(0deg);
+  }
+
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.follow-container{
+  max-width: 100vw;
+  min-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--wash);
+}
+
+.waiting-follow{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 50vw;
+  background-color: var(--white);
+  padding: 20px;
+}
+
+.waiting-follow span{
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.waiting-follow svg{
+  font-size: 100px;
+  color: var(--purple);
+  animation: rotation 4s linear infinite;
+}

@@ -12,9 +12,14 @@ import Input from "../../components/form/input/Input";
 import Button from "../../components/form/button/Button";
 import Footer from "../../components/form/footer/Footer";
 import ReactLoading from "../../components/loading/Loading";
+import { useDispatch } from "react-redux";
+import { loginAction } from "../../redux/actions/auth/authAction";
+import { showAction } from "../../redux/actions/notification/notificationActions";
+
 import "./Login.css";
 
 const Form = () => {
+  const dispatch = useDispatch();
   const useFormValidation = new UseFormValidation();
   const authService = new AuthService();
   const [form, setForm] = useState({ email: "", password: "" });
@@ -41,14 +46,14 @@ const Form = () => {
       setIsLogging(true);
       const data = await authService.login(form);
       if (data.token) {
-        setTimeout(() => {
-          setIsLogging(false);
-          navigate("/");
-        }, 1000);
+        dispatch(showAction({ type: "notification-sucess", message: "Login success!" }));
+        dispatch(loginAction(data));
+        setIsLogging(false);
+        navigate("/");
       }
     } catch (error) {
       setIsLogging(false);
-      console.log(error.response);
+      dispatch(showAction({ type: "notification-danger", message: "Login failed!" }));
       setErrors(error.response.statusText);
     }
   };
@@ -70,6 +75,7 @@ const Form = () => {
           name={"email"}
           value={form.email}
           onChange={handleForm}
+          autocomplete={"username"}
           type={"text"}
           placeholder={"Email"}
           onKey={handleValidateform}
@@ -78,6 +84,7 @@ const Form = () => {
         <Input
           Icon={() => <RiLockPasswordLine />}
           name={"password"}
+          autocomplete={"current-password"}
           value={form.password}
           onChange={handleForm}
           type={"password"}

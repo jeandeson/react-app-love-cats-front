@@ -2,15 +2,18 @@ import React from "react";
 import { SiNestjs } from "react-icons/si";
 import { BsFillHeartFill } from "react-icons/bs";
 import { TiThMenu } from "react-icons/ti";
-import "./Header.css";
-import AuthService from "../../services/authService";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { logoutAction } from "../../redux/actions/auth/authAction";
+import "./Header.css";
 
 const Nav = () => {
   const navigate = useNavigate();
-  const authService = new AuthService();
+  const dispatch = useDispatch();
+  const userInfo = useSelector((state) => state.auth);
   const handleLogout = () => {
-    authService.handleLogout();
+    dispatch(logoutAction());
     navigate("/login");
   };
   return (
@@ -25,6 +28,7 @@ const Nav = () => {
           <li className="hamburger">
             <TiThMenu />
           </li>
+          <li>{userInfo?.user?.name}</li>
           <li onClick={handleLogout}>
             <span>Logout</span>
           </li>

@@ -50,7 +50,8 @@ export default class authService {
     return axios.post("auth/reset_password", JSON.stringify(body));
   }
 
-  async register(body) {
-    return axios.post("auth/register", JSON.stringify(body));
+  async register(userForm, catForm) {
+    userForm.cat = catForm;
+    return axios.post("auth/register", JSON.stringify(userForm));
   }
 }
