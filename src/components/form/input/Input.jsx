@@ -1,7 +1,8 @@
 import React from "react";
+import "./Input.css";
 const Input = ({ Icon, name, onChange, type, placeholder, autocomplete = null, value = "", onKey = null }) => {
   return (
-    <div>
+    <div className="input-container">
       <Icon />
       <input
         onKeyUp={onKey ? (event) => onKey(event) : null}

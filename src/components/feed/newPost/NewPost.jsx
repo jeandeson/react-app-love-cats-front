@@ -5,8 +5,8 @@ import { showAction } from "../../../redux/actions/notification/notificationActi
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { MdPublish } from "react-icons/md";
-import { MdTagFaces } from "react-icons/md";
 import { IoMdPhotos } from "react-icons/io";
+// import { MdTagFaces } from "react-icons/md";
 import "./NewPost.css";
 
 const postService = new PostService();
@@ -55,10 +55,10 @@ const NewPost = ({ handleAddPost }) => {
           <IoMdPhotos />
           Photo/video
         </span>
-        <span>
+        {/* <span>
           <MdTagFaces />
           Feelings/activities
-        </span>
+        </span> */}
       </div>
     </div>
   );

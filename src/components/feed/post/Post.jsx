@@ -4,15 +4,22 @@ import { FaComment } from "react-icons/fa";
 import { IoIosMore } from "react-icons/io";
 import LikeService from "../../../services/likeService";
 import UserService from "../../../services/userService";
+import { useSelector } from "react-redux";
 import "./Post.css";
+import CommentBox from "../../commentBox/CommentBox";
+import ActionService from "../../../services/actionService";
 
 const userService = new UserService();
 const likeService = new LikeService();
+const actionService = new ActionService();
 const Post = ({ post, user }) => {
+  const [comment, setComment] = useState({});
   const [userData, setUserData] = useState({});
   const [likeData, setLikeData] = useState({});
+  const authUser = useSelector((state) => state.auth.user);
   const [liked, setIsLiked] = useState(false);
   useEffect(() => {
+    console.log(post);
     async function handleGetUser() {
       const { data } = await userService.getbyId(post.user_id);
       setUserData(data);
@@ -29,7 +36,18 @@ const Post = ({ post, user }) => {
     }
     handleGetUser();
     handleGetLikeData();
-  }, [post.id, post.user_id, user.id]);
+  }, [post.id, post.user_id, user.id, post]);
+
+  const handleSetComment = (value) => {
+    setComment(value);
+  };
+
+  const handleComment = async (event) => {
+    if (event.charCode === 13) {
+      const { data } = await actionService.comment({ user_id: user.id, post_id: post.id, content: comment });
+      console.log(data);
+    }
+  };
 
   const handleLike = async () => {
     const isLike = likeData.find((like) => like.user_id === user.id);
@@ -75,6 +93,21 @@ const Post = ({ post, user }) => {
           Comment
         </span>
       </div>
+      <div className="comment-section">
+        <div className="comment-img-container">
+          <img src={authUser.image} alt="" />
+        </div>
+        <input
+          onKeyPress={(event) => handleComment(event)}
+          name="comment"
+          onChange={(event) => handleSetComment(event.target.value)}
+          type="text"
+          placeholder="Write your comment here"
+        />
+      </div>
+      {post.comments.map((comment) => (
+        <CommentBox comment={comment} />
+      ))}
     </div>
   );
 };

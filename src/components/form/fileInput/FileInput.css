@@ -1,6 +1,19 @@
 .file-input{
   display: none;
 }
+
+.input-file-container{
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--dark-lilac);
+  border-radius: 5px;
+}
+
+.input-file-container svg{
+  margin: 0 5px;
+  font-size: 20px;
+}
+
 input#file-upload-button{
   display: none;
 }

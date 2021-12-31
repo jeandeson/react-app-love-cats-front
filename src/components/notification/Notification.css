@@ -12,6 +12,20 @@
     opacity: 0;
   }
 }
+@keyframes showing-notifiy-mobile {
+  0% {
+    top: -5%;
+    opacity: 1;
+  }
+  75% {
+    top: 0%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0;
+  }
+}
 
 .notification-close-wrapper{
   background-color: red;
@@ -33,6 +47,7 @@
   top: 5%;
   display: none;
   position: absolute;
+  z-index: 999999;
   right: 5%;
   color: white;
   display: flex;
@@ -58,4 +73,13 @@
 }
 .notification-info{
   background-color: blue;
+}
+
+@media (max-width: 768px){
+  .notification-container{
+    width: 100vw;
+    animation: showing-notifiy-mobile 4s ease-in-out forwards;
+    right: 0%;
+    top: -5%;
+  }
 }

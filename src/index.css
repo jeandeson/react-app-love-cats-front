@@ -14,7 +14,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
+body, html{
   background-color: var(--wash);
 }
 
@@ -40,4 +40,14 @@ body{
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a{
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  body, html{
+    background-color: var(--white);
+  }
 }

@@ -39,3 +39,12 @@
   min-width: 100%;
   min-height: 100%;
 }
+
+@media (max-width: 768px) {
+  .search-user-container{
+    min-width: 100vw;
+  }
+  .waiting-follow{
+    width: 100vw;
+  }
+}

@@ -1,0 +1,27 @@
+.input-container input {
+  height: 40px;
+  font-size: 16px;
+  width: 100%;
+  border: none;
+}
+
+.input-container input:focus {
+  outline: none;
+}
+
+div.input-container  {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--purple);
+  border-right: 5px solid var(--purple);
+  border-radius: 5px;
+}
+
+.input-container svg{
+  margin: 0 5px;
+  font-size: 20px;
+}

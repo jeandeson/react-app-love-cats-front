@@ -31,15 +31,16 @@ ul.header-pages{
   height: 100%;
 }
 
-ul.header-pages li{
+ul.header-pages li, ul.header-pages  a{
   display: flex;
   align-items: center;
   padding: 0 30px;
   height: 100%;
   min-width: 60px;
+  text-decoration: none;
 }
 
-ul.header-pages li:hover, ul.header-pages li:hover svg{
+ul.header-pages li:hover, ul.header-pages li:hover svg, .header a:hover{
   background-color: var(--dark-lilac);
   color: white;
 }
@@ -56,4 +57,22 @@ ul.header-pages li a, ul.header-pages li svg{
 
 .display-none{
   display: none;
+}
+
+@media (max-width: 768px) {
+  .header ul li.header-user-info{
+    display: none;
+  }
+  .header ul li.header-logout, .header a:last-of-type{
+    display: none;
+  }
+  .header {
+    padding: 5px;
+  }
+}
+
+@media (min-width: 768px) {
+  ul.header-pages li.hamburger{
+    display: none;
+  }
 }

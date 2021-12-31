@@ -1,0 +1,29 @@
+.comment-section .comment-box{
+  min-width: 50%;
+  max-width: 100%;
+  background-color: var(--wash);
+  min-height: 50px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-section .comment-box{
+  max-width: 70%;
+  word-break: break-all;
+}
+
+.comment-box span{
+  font-size: .8125rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+  line-height: 1.2308;
+}
+
+.comment-box span:last-of-type{
+  font-size: .9375rem;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
